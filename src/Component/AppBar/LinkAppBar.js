@@ -24,10 +24,7 @@ const routes = [
     path: "clients",
     name: "Clients",
   },
-  {
-    path: "users",
-    name: "Users",
-  },
+ 
 ];
 
 export default function LinkAppBar({ toggleDrawer }) {

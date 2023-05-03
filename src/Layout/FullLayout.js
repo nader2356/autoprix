@@ -1,18 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import useTheme from "@mui/material/styles/useTheme";
-import useMediaQuery from "@mui/material/useMediaQuery/useMediaQuery";
+
 import { Outlet } from "react-router-dom";
 import Box from "@mui/material/Box/Box";
 import Container from "@mui/material/Container/Container";
 import AppBar from "../Component/AppBar/AppBar";
 import SlideBar from "../Component/SideBar/SideBar";
 import Breadcrumbs from "./Breadcrumbs";
+import Footer from "../Component/Footer/Footer";
 
 const drawerWidth = "25rem";
 
 export default function FullLayout() {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [openBreadcrumbs, setOpenBreadcrumbs] = useState(false);
+  const [openSearchBar, setOpenSearchbar] = useState(false);
 
   const theme = useTheme();
 
@@ -31,30 +34,33 @@ export default function FullLayout() {
           drawerWidth={drawerWidth}
           toggleDrawer={toggleDrawer}
         />
-
+     
         <Box
           sx={{
             paddingTop: "4rem",
             minHeight: "100vh",
             width: "100%",
-
+            backgroundColor: "#eeeeee",
             transition: theme.transitions.create(["width", "margin"], {
               easing: theme.transitions.easing.sharp,
               duration: theme.transitions.duration.leavingScreen,
             }),
           }}
         >
-           <Breadcrumbs></Breadcrumbs>
+          <Breadcrumbs
+            openBreadcrumbs={openBreadcrumbs}
+            setOpenBreadcrumbs={setOpenBreadcrumbs}
+          ></Breadcrumbs>
           <Container
             id="main"
             maxWidth="xl"
             sx={{
-              minHeight: "100vh",
+              minHeight: "80vh",
             }}
           >
-           
             <Outlet />
           </Container>
+          <Footer></Footer>
         </Box>
       </Box>
     </>
