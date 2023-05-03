@@ -10,6 +10,7 @@ import SlideBar from "../Component/SideBar/SideBar";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "../Component/Footer/Footer";
 
+
 const drawerWidth = "25rem";
 
 export default function FullLayout() {
@@ -26,6 +27,8 @@ export default function FullLayout() {
         open={openDrawer}
         drawerWidth={drawerWidth}
         setOpenDrawer={setOpenDrawer}
+        openSearchBar={openSearchBar}
+        setOpenSearchbar={setOpenSearchbar}
       />
 
       <Box component="main">
@@ -34,7 +37,7 @@ export default function FullLayout() {
           drawerWidth={drawerWidth}
           toggleDrawer={toggleDrawer}
         />
-     
+
         <Box
           sx={{
             paddingTop: "4rem",
@@ -47,10 +50,6 @@ export default function FullLayout() {
             }),
           }}
         >
-          <Breadcrumbs
-            openBreadcrumbs={openBreadcrumbs}
-            setOpenBreadcrumbs={setOpenBreadcrumbs}
-          ></Breadcrumbs>
           <Container
             id="main"
             maxWidth="xl"
@@ -58,6 +57,13 @@ export default function FullLayout() {
               minHeight: "80vh",
             }}
           >
+            
+            <Breadcrumbs
+              openBreadcrumbs={openBreadcrumbs}
+              setOpenBreadcrumbs={setOpenBreadcrumbs}
+              openSearchBar={openSearchBar}
+              setOpenSearchbar={setOpenSearchbar}
+            ></Breadcrumbs>
             <Outlet />
           </Container>
           <Footer></Footer>

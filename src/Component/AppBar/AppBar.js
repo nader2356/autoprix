@@ -1,41 +1,26 @@
-import { useState } from "react";
-
 import { default as NavBar } from "@mui/material/AppBar/AppBar";
 import Toolbar from "@mui/material/Toolbar/Toolbar";
-import Divider from "@mui/material/Divider/Divider";
+
 import Box from "@mui/material/Box/Box";
-import Avatar from "@mui/material/Avatar";
+
+import SearchIcon from "@mui/icons-material/Search";
 import logo from "../../img/logo.59e5fdb.png";
 import Button from "@mui/material/Button/Button";
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
-import Drawer from "@mui/material/Drawer/Drawer";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
-import useMediaQuery from "@mui/material/useMediaQuery/useMediaQuery";
 import useTheme from "@mui/material/styles/useTheme";
 import HamburgerButton from "./HambuergerButton";
-import { IconButton, Tooltip } from "@mui/material";
-import Links from "../SideBar/Link";
+import { Container, IconButton, InputBase } from "@mui/material";
+
 import LinkAppBar from "./LinkAppBar";
 
-export default function AppBar({ open, drawerWidth, setOpenDrawer }) {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const openMenu = Boolean(anchorEl);
-  const pages = ["Find Work", "My Jobs", "Reports", "Messages"];
 
+export default function AppBar({ setOpenDrawer, openSearchBar }) {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const handleOpenMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleCloseMenu = () => {
-    setAnchorEl(null);
-  };
   const toggleDrawer = () => {
     setOpenDrawer((prev) => !prev);
   };
@@ -56,7 +41,7 @@ export default function AppBar({ open, drawerWidth, setOpenDrawer }) {
           }),
         }}
       >
-        <Toolbar  >
+        <Toolbar>
           <Box
             sx={{
               display: "flex",
@@ -106,6 +91,72 @@ export default function AppBar({ open, drawerWidth, setOpenDrawer }) {
           </Box>
         </Toolbar>
       </NavBar>
+      {openSearchBar && (
+        <NavBar
+          position="fixed"
+          sx={{
+            background: "#241a3d",
+            boxShadow: "none",
+            width: "100%",
+
+            marginTop: "4.0rem",
+            height: "70px",
+            paddingBottom: "4rem",
+
+            transition: theme.transitions.create(["width", "margin"], {
+              easing: theme.transitions.easing.sharp,
+              duration: theme.transitions.duration.leavingScreen,
+            }),
+          }}
+        >
+          <Container
+            id="main"
+            maxWidth="xl"
+            sx={{
+              minHeight: "80vh",
+            }}
+          >
+            <Toolbar>
+              <Box display="flex" justifyContent="space-between" p={2}>
+                {/* SEARCH BAR */}
+                <Box
+                  display="flex"
+                  backgroundColor="#eeeeee"
+                  borderRadius="3px"
+                  marginLeft="3rem"
+                >
+                  <InputBase
+                    sx={{ ml: 2, width: "50vh" }}
+                    placeholder="Search"
+                  />
+                  <IconButton type="button" sx={{ p: 1 }}>
+                    <SearchIcon />
+                  </IconButton>
+                </Box>
+                <Button
+                  sx={{
+                    marginLeft: "1rem",
+                    textTransform: "capitalize" ,
+                    background: "#fcb414",
+                    color: "#212121",
+                    display: { xs: "flex", md: "none" },
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                    paddingRight: " 2rem",
+                    paddingLeft : "1rem"
+                  }}
+                >
+                  <FilterAltIcon
+                    sx={{ width: "2rem", height: "2rem",marginRight: "0.5rem", color: "#212121" }}
+                  />
+                  Filter
+                </Button>
+              
+              </Box>
+            </Toolbar>
+          </Container>
+        </NavBar>
+      )}
     </>
   );
 }

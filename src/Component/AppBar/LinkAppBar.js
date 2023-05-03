@@ -4,9 +4,6 @@ import ListItemButton from "@mui/material/ListItemButton/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon/ListItemIcon";
 import styled from "@mui/material/styles/styled";
 
-import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
-import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
-import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
 import { Typography } from "@mui/material";
 import useTheme from "@mui/material/styles/useTheme";
 import useMediaQuery from "@mui/material/useMediaQuery/useMediaQuery";
@@ -24,7 +21,6 @@ const routes = [
     path: "clients",
     name: "Clients",
   },
- 
 ];
 
 export default function LinkAppBar({ toggleDrawer }) {
