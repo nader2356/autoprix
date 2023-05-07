@@ -33,21 +33,21 @@ export default function HeaderSideBar({ toggleDrawer, titre }) {
     <>
       <HamburgerButton2 toggleDrawer={toggleDrawer}></HamburgerButton2>
 
-      <StyledBadge
-        overlap="circular"
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        variant="dot"
-      >
-        <Avatar alt="Remy Sharp" src="" />
-      </StyledBadge>
       <Button sx={{ color: "white", marginLeft: -2, paddingLeft: 2 }}>
+        <StyledBadge
+          overlap="circular"
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+          variant="dot"
+        >
+          <Avatar alt="Remy Sharp" src="" />
+        </StyledBadge>
         <Typography
           variant="h5"
           noWrap
           sx={{
             mr: 2,
             textDecoration: "none",
-          
+
             textTransform: "capitalize",
             marginLeft: 2,
             fontSize: "1.3rem",

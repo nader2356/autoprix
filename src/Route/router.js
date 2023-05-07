@@ -1,5 +1,5 @@
 
-import Dashboards from "../Dashboard/Dashboards"
+import Dashboards from "../Search/Search"
 import FullLayout from "../Layout/FullLayout"
 
 const Router =  [
@@ -10,7 +10,7 @@ const Router =  [
 			
 			
 			{ path: '/dashboard', element: <Dashboards /> },
-			{ path: '/clients', element: <Dashboards /> },
+			
 			
 		],
 	},

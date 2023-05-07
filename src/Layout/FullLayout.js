@@ -7,16 +7,13 @@ import Box from "@mui/material/Box/Box";
 import Container from "@mui/material/Container/Container";
 import AppBar from "../Component/AppBar/AppBar";
 import SlideBar from "../Component/SideBar/SideBar";
-import Breadcrumbs from "./Breadcrumbs";
-import Footer from "../Component/Footer/Footer";
 
+import Footer from "../Component/Footer/Footer";
 
 const drawerWidth = "25rem";
 
 export default function FullLayout() {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [openBreadcrumbs, setOpenBreadcrumbs] = useState(false);
-  const [openSearchBar, setOpenSearchbar] = useState(false);
 
   const theme = useTheme();
 
@@ -27,8 +24,6 @@ export default function FullLayout() {
         open={openDrawer}
         drawerWidth={drawerWidth}
         setOpenDrawer={setOpenDrawer}
-        openSearchBar={openSearchBar}
-        setOpenSearchbar={setOpenSearchbar}
       />
 
       <Box component="main">
@@ -54,20 +49,13 @@ export default function FullLayout() {
             id="main"
             maxWidth="xl"
             sx={{
-              minHeight: "80vh",
+              minHeight: "130vh",
             }}
           >
-            
-            <Breadcrumbs
-              openBreadcrumbs={openBreadcrumbs}
-              setOpenBreadcrumbs={setOpenBreadcrumbs}
-              openSearchBar={openSearchBar}
-              setOpenSearchbar={setOpenSearchbar}
-            ></Breadcrumbs>
             <Outlet />
           </Container>
-          <Footer></Footer>
         </Box>
+        <Footer></Footer>
       </Box>
     </>
   );

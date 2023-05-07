@@ -18,7 +18,7 @@ import { Container, IconButton, InputBase } from "@mui/material";
 import LinkAppBar from "./LinkAppBar";
 
 
-export default function AppBar({ setOpenDrawer, openSearchBar }) {
+export default function AppBar({ setOpenDrawer}) {
   const theme = useTheme();
 
   const toggleDrawer = () => {
@@ -91,72 +91,7 @@ export default function AppBar({ setOpenDrawer, openSearchBar }) {
           </Box>
         </Toolbar>
       </NavBar>
-      {openSearchBar && (
-        <NavBar
-          position="fixed"
-          sx={{
-            background: "#241a3d",
-            boxShadow: "none",
-            width: "100%",
-
-            marginTop: "4.0rem",
-            height: "70px",
-            paddingBottom: "4rem",
-
-            transition: theme.transitions.create(["width", "margin"], {
-              easing: theme.transitions.easing.sharp,
-              duration: theme.transitions.duration.leavingScreen,
-            }),
-          }}
-        >
-          <Container
-            id="main"
-            maxWidth="xl"
-            sx={{
-              minHeight: "80vh",
-            }}
-          >
-            <Toolbar>
-              <Box display="flex" justifyContent="space-between" p={2}>
-                {/* SEARCH BAR */}
-                <Box
-                  display="flex"
-                  backgroundColor="#eeeeee"
-                  borderRadius="3px"
-                  marginLeft="3rem"
-                >
-                  <InputBase
-                    sx={{ ml: 2, width: "50vh" }}
-                    placeholder="Search"
-                  />
-                  <IconButton type="button" sx={{ p: 1 }}>
-                    <SearchIcon />
-                  </IconButton>
-                </Box>
-                <Button
-                  sx={{
-                    marginLeft: "1rem",
-                    textTransform: "capitalize" ,
-                    background: "#fcb414",
-                    color: "#212121",
-                    display: { xs: "flex", md: "none" },
-                    fontSize: "20px",
-                    fontWeight: "bold",
-                    paddingRight: " 2rem",
-                    paddingLeft : "1rem"
-                  }}
-                >
-                  <FilterAltIcon
-                    sx={{ width: "2rem", height: "2rem",marginRight: "0.5rem", color: "#212121" }}
-                  />
-                  Filter
-                </Button>
-              
-              </Box>
-            </Toolbar>
-          </Container>
-        </NavBar>
-      )}
+     
     </>
   );
 }

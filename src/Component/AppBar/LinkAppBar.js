@@ -17,10 +17,6 @@ const routes = [
     path: "dashboard",
     name: "Dashboard",
   },
-  {
-    path: "clients",
-    name: "Clients",
-  },
 ];
 
 export default function LinkAppBar({ toggleDrawer }) {
@@ -68,7 +64,6 @@ export default function LinkAppBar({ toggleDrawer }) {
                     <Typography
                       variant="h6"
                       noWrap
-                      component="a"
                       href=""
                       sx={{
                         mr: 2,
