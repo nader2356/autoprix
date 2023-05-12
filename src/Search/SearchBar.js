@@ -7,16 +7,15 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import Button from "@mui/material/Button/Button";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
+
 
 import useTheme from "@mui/material/styles/useTheme";
 
-import { Container, IconButton, InputBase } from "@mui/material";
+import { Container, IconButton, InputBase, useMediaQuery } from "@mui/material";
 
 export default function SearchBar() {
   const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       <NavBar
@@ -25,10 +24,10 @@ export default function SearchBar() {
           background: "#241a3d",
           boxShadow: "none",
           width: "100%",
-          height: "60px",
-          marginTop: "4.0rem",
-          paddingBottom: "4rem",
-
+          height: "80px",
+          marginTop: "5rem",
+          paddingBottom: "2rem",
+          paddingTop: "1rem",
           transition: theme.transitions.create(["width", "margin"], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -36,12 +35,12 @@ export default function SearchBar() {
         }}
       >
         <Toolbar>
-          <Container
+          <Container maxWidth ="xl"
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "center",
-              marginLeft: "21.5rem",
+          
+              
             }}
           >
             {/* SEARCH BAR */}
@@ -53,10 +52,12 @@ export default function SearchBar() {
             </Box>
             <Button
               sx={{
-                marginLeft: "1rem",
+              
                 textTransform: "capitalize",
                 background: "#fcb414",
+                maxWidth:"50rem",
                 color: "#212121",
+                marginLeft:"1rem",
                 display: { xs: "flex", md: "none" },
                 fontSize: "20px",
                 fontWeight: "bold",

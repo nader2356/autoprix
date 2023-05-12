@@ -13,9 +13,14 @@ import Stack from "@mui/material/Stack/Stack";
 import Box from "@mui/material/Box";
 
 const routes = [
+  
   {
     path: "dashboard",
     name: "Dashboard",
+  },
+  {
+    path: "recherche",
+    name: "Recherche",
   },
 ];
 
@@ -64,6 +69,7 @@ export default function LinkAppBar({ toggleDrawer }) {
                     <Typography
                       variant="h6"
                       noWrap
+                      
                       href=""
                       sx={{
                         mr: 2,

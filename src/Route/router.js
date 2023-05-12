@@ -1,6 +1,8 @@
 
-import Dashboards from "../Search/Search"
+import Search  from "../Search/Search"
 import FullLayout from "../Layout/FullLayout"
+import Dashboard from "../Dashboard/Dashboard"
+
 
 const Router =  [
 	{
@@ -8,8 +10,9 @@ const Router =  [
 		element: <FullLayout />,
 		children: [
 			
+			{ path: '/dashboard', element: <Dashboard /> },
+			{ path: '/recherche', element: <Search /> },
 			
-			{ path: '/dashboard', element: <Dashboards /> },
 			
 			
 		],

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box/Box";
 
 import Links from "./Link";
 import HeaderSideBar from "./HeaderSideBar";
-export default function SlideBar({ open, toggleDrawer }) {
+export default function SlideBar({ open, toggleDrawer,drawerWidth}) {
   return (
     <>
       <Drawer
@@ -13,7 +13,7 @@ export default function SlideBar({ open, toggleDrawer }) {
         onClose={toggleDrawer}
         sx={{
           "& .MuiDrawer-paper": {
-            width: "19rem",
+            width: `${drawerWidth}`,
             boxSizing: "border-box",
             background: "#241a3d",
           },
@@ -24,6 +24,7 @@ export default function SlideBar({ open, toggleDrawer }) {
             display: "flex",
             justifyContent: "start",
             alignItems: "center",
+            paddingTop:"1rem"
           }}
         >
           <HeaderSideBar

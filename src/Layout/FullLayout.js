@@ -9,54 +9,50 @@ import AppBar from "../Component/AppBar/AppBar";
 import SlideBar from "../Component/SideBar/SideBar";
 
 import Footer from "../Component/Footer/Footer";
+import { useMediaQuery } from "@mui/material";
 
 const drawerWidth = "25rem";
 
 export default function FullLayout() {
   const [openDrawer, setOpenDrawer] = useState(false);
 
+
   const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'))
 
   const toggleDrawer = () => setOpenDrawer((prev) => !prev);
   return (
-    <>
+    <Box sx={{  width: "100%" }}>
       <AppBar
         open={openDrawer}
         drawerWidth={drawerWidth}
         setOpenDrawer={setOpenDrawer}
       />
 
-      <Box component="main">
+    
         <SlideBar
           open={openDrawer}
           drawerWidth={drawerWidth}
           toggleDrawer={toggleDrawer}
         />
 
-        <Box
+        <Box component="main"
           sx={{
-            paddingTop: "4rem",
+           
             minHeight: "100vh",
             width: "100%",
-            backgroundColor: "#eeeeee",
+            backgroundColor: "#bdbdbd",
             transition: theme.transitions.create(["width", "margin"], {
               easing: theme.transitions.easing.sharp,
               duration: theme.transitions.duration.leavingScreen,
             }),
-          }}
+           
+					}}
         >
-          <Container
-            id="main"
-            maxWidth="xl"
-            sx={{
-              minHeight: "130vh",
-            }}
-          >
-            <Outlet />
-          </Container>
+          <Outlet />
         </Box>
         <Footer></Footer>
-      </Box>
-    </>
+      
+    </Box>
   );
 }

@@ -6,7 +6,7 @@ import Box from "@mui/material/Box/Box";
 import SearchIcon from "@mui/icons-material/Search";
 import logo from "../../img/logo.59e5fdb.png";
 import Button from "@mui/material/Button/Button";
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
@@ -17,8 +17,7 @@ import { Container, IconButton, InputBase } from "@mui/material";
 
 import LinkAppBar from "./LinkAppBar";
 
-
-export default function AppBar({ setOpenDrawer}) {
+export default function AppBar({ setOpenDrawer, open, drawerWidth }) {
   const theme = useTheme();
 
   const toggleDrawer = () => {
@@ -32,13 +31,13 @@ export default function AppBar({ setOpenDrawer}) {
           background: "#241a3d",
           boxShadow: "none",
           width: "100%",
-          height: "60px",
-          paddingBottom: "4rem",
-
+          height: "80px",
+          paddingTop: "0.5rem",
           transition: theme.transitions.create(["width", "margin"], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
           }),
+          
         }}
       >
         <Toolbar>
@@ -91,7 +90,6 @@ export default function AppBar({ setOpenDrawer}) {
           </Box>
         </Toolbar>
       </NavBar>
-     
     </>
   );
 }

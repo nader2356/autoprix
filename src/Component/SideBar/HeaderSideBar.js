@@ -33,7 +33,7 @@ export default function HeaderSideBar({ toggleDrawer, titre }) {
     <>
       <HamburgerButton2 toggleDrawer={toggleDrawer}></HamburgerButton2>
 
-      <Button sx={{ color: "white", marginLeft: -2, paddingLeft: 2 }}>
+      <Button sx={{ color: "white", paddingLeft: 2 }}>
         <StyledBadge
           overlap="circular"
           anchorOrigin={{ vertical: "bottom", horizontal: "right" }}

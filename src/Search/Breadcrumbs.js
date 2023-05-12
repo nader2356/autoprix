@@ -3,10 +3,7 @@ import styled from "@mui/material/styles/styled";
 
 import { NavLink, useLocation } from "react-router-dom";
 
-export default function Breadcrumbs({
-
-  
-}) {
+export default function Breadcrumbs() {
   const location = useLocation();
   console.log(location);
   const lastPath = location.pathname.split("/").pop();
@@ -14,11 +11,11 @@ export default function Breadcrumbs({
   const StyledBreadcrumb = styled(MuiBreadcrumbs)({
     textTransform: "capitalize",
     width: "15rem",
-    marginLeft: "2.5rem",
-    marginTop: "6rem",
+   
+    marginTop: "7rem",
     paddingTop: "0.5rem",
-    paddingLeft: "1.3rem",
-    paddingBottom: "0.5rem",
+    paddingLeft: "1rem",
+    paddingBottom: "0.3rem",
     backgroundColor: "#fafafa",
   });
  
@@ -32,7 +29,7 @@ export default function Breadcrumbs({
     <>
       
         <StyledBreadcrumb aria-label="breadcrumb">
-          <StyledNavLink to="/dashboard">Home</StyledNavLink>
+          <StyledNavLink to="/dashboard">Accueil</StyledNavLink>
           {location.pathname.split("/").map((path, index) => {
             if (index === 0) return null;
 

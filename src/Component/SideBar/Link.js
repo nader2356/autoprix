@@ -15,8 +15,13 @@ import Box from "@mui/material/Box";
 
 const routes = [
   {
-    path: "/dashboard",
+    path: "dashboard",
     name: "Dashboard",
+    icon: <DashboardRoundedIcon />,
+  },
+  {
+    path: "recherche",
+    name: "Recherche",
     icon: <DashboardRoundedIcon />,
   },
 ];
